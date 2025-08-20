@@ -1,0 +1,50 @@
+# SystemVerilog Project .gitignore
+
+# Simulation files
+*.vcd
+*.out
+*.log
+*.dump
+
+# Compilation artifacts
+*.o
+*.a
+*.so
+*.dll
+*.exe
+
+# Icarus Verilog specific
+*.vvp
+*.vpi
+*.vpl
+
+# Verilator specific
+obj_dir/
+*.cpp
+*.h
+*.mk
+
+# EDA Playground temporary files
+*.txt.bak
+*.sv.bak
+
+# OS specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor temporary files
+*~
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Build directories
+build/
+sim/
+*.vcd.gz
+
+# Documentation temporary files
+*.tmp
+*.temp
