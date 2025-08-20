@@ -22,7 +22,7 @@ adder_topdown/
 ├── tb/                    # Testbench files
 │   └── tb_adder.sv        # Main testbench with stimulus
 ├── docs/                  # Documentation and results
-│   └── [waveform screenshots]     # Simulation results (to be added)
+│   └── waveform_simulation.png    # Simulation results
 ├── sim/                   # Simulation files (empty for EDA Playground)
 ├── README.md              # This file
 ├── .gitignore            # Git ignore rules
@@ -56,7 +56,7 @@ The testbench includes comprehensive test cases covering:
 ✅ **All test cases passed**
 
 ### Waveform Screenshot
-*Waveform screenshot from EDA Playground simulation showing proper signal timing and carry propagation*
+![Waveform Simulation](docs/waveform_simulation.png)
 
 The simulation demonstrates proper:
 - Signal propagation through the ripple-carry chain
