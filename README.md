@@ -1,4 +1,4 @@
-# Parameterized Ripple-Carry Adder (SystemVerilog) — Part of RISC-V Pipeline Project
+# SystemVerilog Ripple-Carry Adder with Testbench & Waveform Verification
 
 ## Introduction
 
