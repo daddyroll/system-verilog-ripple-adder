@@ -22,7 +22,7 @@ adder_topdown/
 ├── tb/                    # Testbench files
 │   └── tb_adder.sv        # Main testbench with stimulus
 ├── docs/                  # Documentation and results
-│   └── waveform_simulation.png    # Simulation results
+│   └── [waveform screenshots]     # Simulation results (to be added)
 ├── sim/                   # Simulation files (empty for EDA Playground)
 ├── README.md              # This file
 ├── .gitignore            # Git ignore rules
@@ -56,7 +56,7 @@ The testbench includes comprehensive test cases covering:
 ✅ **All test cases passed**
 
 ### Waveform Screenshot
-![Waveform Simulation](docs/waveform_simulation.png)
+*Waveform screenshot from EDA Playground simulation showing proper signal timing and carry propagation*
 
 The simulation demonstrates proper:
 - Signal propagation through the ripple-carry chain
@@ -71,6 +71,14 @@ This adder implementation will be integrated into:
 1. **ALU Design**: As the core addition/subtraction unit
 2. **Pipeline Integration**: Within the Execute stage of the RISC-V pipeline
 3. **Performance Optimization**: Potential carry-lookahead improvements
+
+## Tech Stack
+
+- **Hardware Description Language**: SystemVerilog
+- **Simulation Tools**: Synopsys VCS, Icarus Verilog, Verilator
+- **Development Platform**: EDA Playground (online SystemVerilog simulation)
+- **Version Control**: Git with appropriate .gitignore rules
+- **Build Automation**: Makefile for local development
 
 ## Development Environment
 
