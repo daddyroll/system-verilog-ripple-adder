@@ -48,3 +48,10 @@ sim/
 # Documentation temporary files
 *.tmp
 *.temp
+
+# Day 2 artifacts
+vectors/*.txt
+model/adder_ref
+model/adder_ref.exe
+
+
