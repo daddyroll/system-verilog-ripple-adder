@@ -1,0 +1,32 @@
+# Tech-mapped synthesis to Sky130 HD standard cells
+set lib    libs/sky130_fd_sc_hd__tt_025C_1v80.lib
+set abcbin /usr/bin/yosys-abc
+
+# ---- Naive Full Adder (FLATTENED) ----
+read_verilog -sv rtl/half_adder.sv rtl/full_adder_naive.sv
+prep -top full_adder_naive
+flatten
+opt_clean -purge
+techmap
+opt -fast
+abc -exe /usr/bin/yosys-abc -D /dev/shm -liberty libs/sky130_fd_sc_hd__tt_025C_1v80.lib
+stat
+write_verilog -noattr reports/full_adder_naive_sky130.v
+write_json              reports/full_adder_naive_sky130.json
+
+design -reset
+
+# ---- Optimized Full Adder (unchanged) ----
+read_verilog -sv rtl/full_adder_opt.sv
+prep -top full_adder_opt
+opt -fast
+techmap
+abc -exe $abcbin -D /dev/shm -liberty $lib
+stat
+write_verilog -noattr reports/full_adder_opt_sky130.v
+write_json              reports/full_adder_opt_sky130.json
+
+
+
+
+

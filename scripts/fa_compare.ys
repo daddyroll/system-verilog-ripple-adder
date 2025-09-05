@@ -1,0 +1,17 @@
+# Compare naive vs optimized full adder (generic synthesis)
+# ---- Naive ----
+read_verilog -sv rtl/half_adder.sv rtl/full_adder_naive.sv
+prep -top full_adder_naive
+opt -fast
+stat
+write_json reports/full_adder_naive.json
+
+# reset and re-read for the next top
+design -reset
+
+# ---- Optimized ----
+read_verilog -sv rtl/full_adder_opt.sv
+prep -top full_adder_opt
+opt -fast
+stat
+write_json reports/full_adder_opt.json
