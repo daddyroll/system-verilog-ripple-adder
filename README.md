@@ -97,16 +97,23 @@ The optimized implementation reduces the logic from 5 primitive cells to 2 compo
 This demonstrates technology-aware optimization: the factored carry (`cout = (a&b) | ((a^b)&cin)`) is efficiently realized by the **MAJ3** gate in Sky130.
 
 ## Artifacts & Logs
-- `reports/fa_sky130.log` — Yosys synthesis logs  
-- `reports/full_adder_naive_sky130.v` — Naïve Sky130 mapped netlist  
-- `reports/full_adder_opt_sky130.v` — Optimized Sky130 mapped netlist  
+
+### Synthesis Logs
+- [fa_sky130.log](reports/fa_sky130.log) — Complete Yosys synthesis logs with detailed statistics
+
+### Sky130 Mapped Netlists
+- [full_adder_naive_sky130.v](reports/full_adder_naive_sky130.v) — Naïve full adder mapped to Sky130 standard cells
+- [full_adder_opt_sky130.v](reports/full_adder_opt_sky130.v) — Optimized full adder mapped to Sky130 standard cells  
 
 ### Synthesis Reports
-![Full Adder Naive Synthesis](docs/FINAL OUTPUT1.png)
-*Naïve full adder synthesis results showing 5 primitive cells*
 
-![Full Adder Optimized Synthesis](docs/FINAL OUTPUT2.png)
-*Optimized full adder synthesis results showing 2 composite cells*
+### Generic Synthesis Results
+![Full Adder Naive - Generic Synthesis](docs/FINAL%20OUTPUT1.png)
+*Naïve full adder generic synthesis showing 5 primitive cells (2×$and, 1×$or, 2×$xor)*
+
+### Sky130 Tech-Mapped Synthesis Results  
+![Full Adder Optimized - Sky130 Synthesis](docs/FINAL%20OUTPUT2.png)
+*Optimized full adder Sky130 synthesis showing 2 composite cells (1×sky130_fd_sc_hd_maj3_1, 1×sky130_fd_sc_hd_xor3_1)*
 
 ## Related Work
 
