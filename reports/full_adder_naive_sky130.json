@@ -1,0 +1,249 @@
+{
+  "creator": "Yosys 0.33 (git sha1 2584903a060)",
+  "modules": {
+    "full_adder_naive": {
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "rtl/full_adder_naive.sv:2.1-14.10"
+      },
+      "ports": {
+        "a": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "b": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "cin": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "sum": {
+          "direction": "output",
+          "bits": [ 5 ]
+        },
+        "cout": {
+          "direction": "output",
+          "bits": [ 6 ]
+        }
+      },
+      "cells": {
+        "$auto$simplemap.cc:75:simplemap_bitop$83": {
+          "hide_name": 1,
+          "type": "$_OR_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "rtl/full_adder_naive.sv:13.15-13.22"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 7 ],
+            "B": [ 8 ],
+            "Y": [ 6 ]
+          }
+        },
+        "ha0": {
+          "hide_name": 0,
+          "type": "half_adder",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "rtl/full_adder_naive.sv:10.12-10.45"
+          },
+          "port_directions": {
+            "c": "output",
+            "s": "output",
+            "x": "input",
+            "y": "input"
+          },
+          "connections": {
+            "c": [ 7 ],
+            "s": [ 9 ],
+            "x": [ 2 ],
+            "y": [ 3 ]
+          }
+        },
+        "ha1": {
+          "hide_name": 0,
+          "type": "half_adder",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "rtl/full_adder_naive.sv:11.12-11.49"
+          },
+          "port_directions": {
+            "c": "output",
+            "s": "output",
+            "x": "input",
+            "y": "input"
+          },
+          "connections": {
+            "c": [ 8 ],
+            "s": [ 5 ],
+            "x": [ 9 ],
+            "y": [ 4 ]
+          }
+        }
+      },
+      "netnames": {
+        "a": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "rtl/full_adder_naive.sv:3.11-3.12"
+          }
+        },
+        "b": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "rtl/full_adder_naive.sv:3.14-3.15"
+          }
+        },
+        "c1": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "rtl/full_adder_naive.sv:7.10-7.12"
+          }
+        },
+        "c2": {
+          "hide_name": 0,
+          "bits": [ 8 ],
+          "attributes": {
+            "src": "rtl/full_adder_naive.sv:7.14-7.16"
+          }
+        },
+        "cin": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "rtl/full_adder_naive.sv:3.17-3.20"
+          }
+        },
+        "cout": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "rtl/full_adder_naive.sv:4.17-4.21"
+          }
+        },
+        "s1": {
+          "hide_name": 0,
+          "bits": [ 9 ],
+          "attributes": {
+            "src": "rtl/full_adder_naive.sv:7.6-7.8"
+          }
+        },
+        "sum": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "rtl/full_adder_naive.sv:4.12-4.15"
+          }
+        }
+      }
+    },
+    "half_adder": {
+      "attributes": {
+        "src": "rtl/half_adder.sv:1.1-4.10"
+      },
+      "ports": {
+        "x": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "y": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "s": {
+          "direction": "output",
+          "bits": [ 4 ]
+        },
+        "c": {
+          "direction": "output",
+          "bits": [ 5 ]
+        }
+      },
+      "cells": {
+        "$auto$simplemap.cc:75:simplemap_bitop$81": {
+          "hide_name": 1,
+          "type": "$_XOR_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "rtl/half_adder.sv:2.14-2.19"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 2 ],
+            "B": [ 3 ],
+            "Y": [ 4 ]
+          }
+        },
+        "$auto$simplemap.cc:75:simplemap_bitop$82": {
+          "hide_name": 1,
+          "type": "$_AND_",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "rtl/half_adder.sv:3.14-3.19"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 2 ],
+            "B": [ 3 ],
+            "Y": [ 5 ]
+          }
+        }
+      },
+      "netnames": {
+        "c": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "rtl/half_adder.sv:1.53-1.54"
+          }
+        },
+        "s": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "rtl/half_adder.sv:1.50-1.51"
+          }
+        },
+        "x": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "rtl/half_adder.sv:1.31-1.32"
+          }
+        },
+        "y": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "rtl/half_adder.sv:1.34-1.35"
+          }
+        }
+      }
+    }
+  }
+}
